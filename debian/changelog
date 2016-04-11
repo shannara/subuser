@@ -1,0 +1,23 @@
+subuser (0.5.6-3) unstable; urgency=medium
+
+  * New debian revision
+  - Fix bug (closes: #820689)
+
+ -- Stanislas Leduc <stanislas.leduc@mailoo.org>  Mon, 11 Apr 2016 15:11:10 +0200
+
+subuser (0.5.6-2) unstable; urgency=medium
+
+  * New debian revision 
+  - Closes #820689
+
+ -- Stanislas Leduc <stanislas.leduc@mailoo.org>  Mon, 11 Apr 2016 14:56:42 +0200
+
+subuser (0.5.6-1) unstable; urgency=medium
+
+  * New upstream release
+  - Add --update option to dev command
+  - Fix /dev/dri permissions issues
+  - Fix encoding bug when communicating with Docker daemon
+  - Improve support for packaging subuser
+
+ -- Stanislas Leduc <stanislas.leduc@mailoo.org>  Mon, 11 Apr 2016 12:37:34 +0200
