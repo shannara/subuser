@@ -1,0 +1,58 @@
+Usage: subuser subuser [add|remove|add-to-path|remove-from-path|edit-permissions|expose-entrypoints|hide-entrypoints] NAME [IMAGESOURCE]
+
+
+
+Add and remove subusers.  Create shorcuts for launching subusers.
+
+EXAMPLES:
+
+Add a new subuser named foo based on the image foo@default.
+
+    $ subuser subuser add foo foo@default
+
+Remove the subuser named foo.
+
+    $ subuser subuser remove foo
+
+Remove subusers foo and bar.
+
+    $ subuser subuser remove foo bar
+
+Create a launcher for the subuser named foo.
+
+    $ subuser subuser add-to-path foo
+
+You can now launch foo directly.
+
+    $ foo
+
+Remove the launcher (if one exists) for the subuser named foo.
+
+    $ subuser subuser remove-from-path foo
+
+Expose a subuser's predefined entrypoints.
+
+    $ subuser subuser expose-entrypoints haskell-platform
+
+Now you can run the predefined entrypoints directly.
+
+    $ gcc
+    $ cabal install
+
+To remove the entrypoints from the PATH use
+
+    $ subuser subuser hide-entrypoints haskell-platform
+
+Edit a subuser's permissions.
+
+    $ subuser subuser edit-permissions foo
+
+Options:
+  -h, --help        show this help message and exit
+  --prefix=PREFIX   When removing subusers, remove all subusers who's names
+                    start with prefix.
+  --accept          Accept permissions without asking.
+  --prompt          Prompt before installing new images.
+  --force-internal  Force a subuser who's name starts with ! to be added,
+                    despite the fact that ! marks interal subusers and is
+                    normally forbidden.

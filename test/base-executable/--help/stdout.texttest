@@ -1,0 +1,15 @@
+You can use one of the following commands:
+dev
+subuser
+registry
+update
+remove-old-images
+repair
+run
+describe
+print-dependency-info
+repository
+version
+list
+pkg
+for more info about each option use: subuser <option> -h

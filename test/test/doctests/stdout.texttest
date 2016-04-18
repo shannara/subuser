@@ -1,0 +1,20 @@
+Initialized empty Git repository in /home/timothy/.texttest/tmp/texttest.1_from_09Apr005657.16996/texttest/test/doctests/hashtest/.git/
+[master (root-commit) 607aa8c] Initial commit
+ 2 files changed, 1012 insertions(+)
+ create mode 100644 bar/New York
+ create mode 100644 blah
+Testing module: subuserlib.classes.user
+Testing module: subuserlib.classes.subusers
+Testing module: subuserlib.permissions
+Testing module: subuserlib.resolve
+Testing module: list
+Testing module: version
+Testing module: describe
+Testing module: print-dependency-info
+Testing module: remove-old-images
+Testing module: repository
+Testing module: subuser
+Testing module: update
+Testing module: subuserlib.classes.fileStructure
+Testing module: subuserlib.classes.gitRepository
+Tests passed.
