@@ -6,14 +6,14 @@ Source: http://subuser.org/rel
 Files: *
 Copyright:
     2014-2016 Timothy Hobbs <timothyhobbs@seznam.cz>
-License: LGPL-3
+License: LGPL
 
 Files: debian/*
 Copyright:
     2016 Stanislas Leduc <stanislas.leduc@mailoo.org>
 License: BSD-3-Clause
 
-License: LGPL-3
+License: LGPL
    This package is free software; you can redistribute it and/or modify
    it under the terms of the GNU Lesser General Public License as published by
    the Free Software Foundation; either version 3 of the License, or
