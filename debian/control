@@ -8,7 +8,8 @@ Homepage: http://subuser.org
 
 Package: subuser
 Architecture: all
-Homepage: http://subuser.org
 Depends: ${misc:Depends}, ${python3:Depends}, python3-setuptools, git, docker.io
 Description: Run programs on Linux with selectively restricted permissions
- Subuser turns a docker container into a normal program. But this program is not fully privileged. It can only access the directory from which it was called
+ Subuser turns a docker container into a normal program, but this program 
+ is not fully privileged, it can only access the directory 
+ from which it was called.
