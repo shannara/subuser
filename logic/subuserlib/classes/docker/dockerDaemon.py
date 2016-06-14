@@ -112,16 +112,6 @@ class DockerDaemon(UserOwnedObject):
       self.__connection = UHTTPConnection("/var/run/docker.sock")
     return self.__connection
 
-  def getContainers(self,onlyRunning=False):
-    queryParameters =  {'all': not onlyRunning}
-    queryParametersString = urllib.parse.urlencode(queryParameters)
-    self.getConnection().request("GET","/v1.13/containers/json?"+queryParametersString)
-    response = self.getConnection().getresponse()
-    if response.status == 200:
-      return json.loads(response.read().decode("utf-8"))
-    else:
-      return []
-
   def getContainer(self,containerId):
     return Container(self.getUser(),containerId)
 
@@ -172,7 +162,10 @@ class DockerDaemon(UserOwnedObject):
       }
     if tag:
       queryParameters["tag"] = tag
-    queryParametersString = urllib.parse.urlencode(queryParameters)
+    try:
+      queryParametersString = urllib.urlencode(queryParameters)
+    except AttributeError:
+      queryParametersString = urllib.parse.urlencode(queryParameters) # Python 3
     excludePatterns = []
     if relativeBuildContextPath and repositoryFileStructure:
       dockerignore = "./.dockerignore"
