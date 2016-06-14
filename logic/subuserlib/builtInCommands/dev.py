@@ -11,11 +11,9 @@ import subprocess
 #internal imports
 import subuserlib.commandLineArguments
 import subuserlib.profile
+import subuserlib.paths
 
-try:
-  subuserExecutable = os.environ["SUBUSER_EXECUTABLE"]
-except KeyError:
-  subuserExecutable = "subuser"
+subuserExecutable = os.path.join(subuserlib.paths.getSubuserDir(),"logic","subuser")
 
 def parseCliArgs(realArgs):
   usage = "usage: subuser dev <args> DEV-IMAGE-NAME"
@@ -48,10 +46,12 @@ def runCommand(realArgs):
     sys.exit()
 
   if options.update:
-    subprocess.call([subuserExecutable,"update","--use-cache","subusers"]+subuserNames)
-    sys.exit()
+    if not subprocess.call([subuserExecutable,"update","--use-cache","subusers"]+subuserNames) == 0:
+      sys.exit()
 
   if len(args) != 1:
+    if options.update:
+      sys.exit()
     sys.exit("Please pass a single dev image name. Use --help for help.")
   devSubuser = None
   devImage = args[0]
