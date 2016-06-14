@@ -13,3 +13,14 @@ Description: Run programs on Linux with selectively restricted permissions
  Subuser turns a docker container into a normal program, but this program 
  is not fully privileged, it can only access the directory 
  from which it was called.
+
+Package: subuser-doc
+Architecture: all
+Section: doc
+Depends: lsb-base (>= 4.1), $(misc:Depends)
+Description: documentation for subuser
+ Subuser turns a docker container into a normal program, but this program
+ is not fully privileged, it can only access the directory
+ from which it was called.
+ .
+ This package provides documentation for subuser.

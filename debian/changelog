@@ -1,5 +1,5 @@
-subuser (0.5.6-1) unstable; urgency=medium
+subuser (0.5.7-1) unstable; urgency=medium
 
   * Initial release. (Closes: #820689)
 
- -- Stanislas Leduc <stanislas.leduc@mailoo.org>  Wed, 01 Jun 2016 22:12:36 +0200
+ -- Stanislas Leduc <stanislas.leduc@mailoo.org>  Wed, 15 Jun 2016 01:32:35 +0200
