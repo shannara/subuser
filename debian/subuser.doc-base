@@ -1,0 +1,9 @@
+Document: subuser
+Title: Subuser Manual
+Author: Timothy Hobbs
+Abstract: This manual describes usage of subuser.
+Section: System/Administration
+
+Format: HTML
+Index: /usr/share/doc/subuser/html/index.html
+Files: /usr/share/doc/subuser/html/*.html
