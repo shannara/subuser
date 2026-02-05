@@ -7,6 +7,11 @@ Module used for determining non-user-configurable paths.
 #external imports
 import os
 import inspect
+try:
+    import importlib.resources as importlib_resources
+except ImportError:
+    # For compatibility with older Python versions (< 3.7)
+    import importlib_resources
 #internal imports
 import subuserlib.executablePath as executablePath
 
@@ -36,9 +41,8 @@ def getSubuserDataFile(filename):
   if os.path.exists(dataFile):
     return dataFile
   else:
-    import pkg_resources
-    dataFile = pkg_resources.resource_filename("subuserlib",os.path.join("data",filename))
-    if not os.path.exists(dataFile):
+    ref = importlib_resources.files("subuserlib").joinpath("data", filename)
+    if not ref.is_file():
       exit("Data file does not exist:"+str(dataFile))
     else:
-      return dataFile
+      return str(ref)
